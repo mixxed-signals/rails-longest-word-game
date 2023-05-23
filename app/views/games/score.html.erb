@@ -1,0 +1,16 @@
+<h1>Your Score</h1>
+
+<%# go through each case %>
+<%# word isnt valid %>
+<% if @result == "Invalid" %>
+<p> Sorry but <%= @guessedWord %> can't be built out of <%= @letters.join(', ') %></p>
+<% else%>
+  <%# word isnt an english word %>
+  <% if @valid == false %>
+  <p> Sorry but <%= @guessedWord %> is not a a valid English word</p>
+  <% else %>
+  <p> Congratulations! <%= @guessedWord %> is a valid English word.</p>
+  <p> But i'm sure you could have done better...</p>
+  <% end %>
+<% end %>
+<%= link_to("Play Again", new_path)%>

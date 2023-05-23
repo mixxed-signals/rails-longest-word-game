@@ -8,9 +8,22 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <style>
+     .btn-purple {
+      background-color: rgb(177, 138, 177);
+      color: white;
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    </style>
   </head>
 
   <body>
     <%= yield %>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </body>
 </html>

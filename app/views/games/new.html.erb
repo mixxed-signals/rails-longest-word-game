@@ -1,0 +1,38 @@
+<h1 class="text-center"> Longest Word</h1>
+
+<%# display letter grid %>
+
+<div class="d-flex justify-content-center mt-5">
+  <% @letters.each do |letter| %>
+    <button type="button" class="btn btn-purple m-2"><%= letter %></button>
+  <% end %>
+</div>
+
+<%# form input %>
+<br>
+<hr>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <p class="text-center">What's the longest word you can find?</p>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="form-group">
+
+          <%# FORM -> redirects to score with post method. name = "word" to retrieve params %>
+            <form action="/score" method="post" data-turbo="false">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <%# to retrieve letters %>
+              <%= hidden_field_tag :letters, @letters.join(',') %>
+              <input type="text"
+              class="form-control"
+              name="word"
+              placeholder="Type your word here">
+              <button type="submit" class="btn btn-purple btn-block">Play</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

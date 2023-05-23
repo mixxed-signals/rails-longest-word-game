@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ .btn-purple {
+  background-color: rgb(177, 138, 177);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 5px;
+ }
